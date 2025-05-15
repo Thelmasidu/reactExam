@@ -28,10 +28,10 @@ const SiteHeader: React.FC = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down("lg"));
 
   const menuOptions = [
-    { label: "Home", path: "/" },
-    { label: "Favorites", path: "/movies/favourites" }
-  ];
-
+  { label: "Home", path: "/" },
+  { label: "Favorites", path: "/movies/favourites" },
+  { label: "Trending", path: "/movies/trending" }
+];
   const handleMenuSelect = (pageURL: string) => {
     navigate(pageURL);
   };
@@ -97,6 +97,8 @@ const SiteHeader: React.FC = () => {
                 >
                   {opt.label}
                 </Button>
+                
+
               ))}
             </>
           )}
