@@ -10,6 +10,8 @@ import NavigationIcon from "@mui/icons-material/Navigation";
 import Fab from "@mui/material/Fab";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from '../movieReviews'
+import LanguageIcon from "@mui/icons-material/Language";
+
 
 const styles = {
     chipSet: {
@@ -55,18 +57,14 @@ const MovieDetails: React.FC<MovieDetailsProps> = (movie) => {
                     </li>
                 ))}
             </Paper>
-            <Paper component="ul" sx={styles.chipSet}>
-                <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
-                <Chip
-                    icon={<MonetizationIcon />}
-                    label={`${movie.revenue.toLocaleString()}`}
-                />
-                <Chip
-                    icon={<StarRate />}
-                    label={`${movie.vote_average} (${movie.vote_count}`}
-                />
-                <Chip label={`Released: ${movie.release_date}`} />
-            </Paper>
+<Paper component="ul" sx={styles.chipSet}>
+    <Chip icon={<AccessTimeIcon />} label={`${movie.runtime} min.`} />
+    <Chip icon={<MonetizationIcon />} label={`${movie.revenue.toLocaleString()}`} />
+    <Chip icon={<StarRate />} label={`${movie.vote_average} (${movie.vote_count}`} />
+    <Chip label={`Released: ${movie.release_date}`} />
+    <Chip icon={<LanguageIcon />} label={`Original Language: ${movie.original_language}`} />
+</Paper>
+
             <Fab
                 color="secondary"
                 variant="extended"
