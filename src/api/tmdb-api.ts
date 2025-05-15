@@ -62,3 +62,17 @@ export const getMovies = () => {
         return json.results;
       });
   };
+
+export const getTrendingMovies = async () => {
+  const response = await fetch(
+    `https://api.themoviedb.org/3/trending/movie/day?language=en-US&api_key=4c6a8f0f7376a53138c5af17d1ffef15`
+  );
+
+  if (!response.ok) {
+    throw new Error("Failed to fetch trending movies");
+  }
+
+  const json = await response.json();
+  return json.results;
+};
+
